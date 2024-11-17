@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.TelaInicial"
+             Title="TelaInicial"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
+  
+    <VerticalStackLayout Margin="10" Padding="10">
+        <Label Text="O evento dos seus sonhos" HorizontalOptions="Center"
+               TextColor="orange" FontAttributes="Bold"
+               FontSize="32" HorizontalTextAlignment="Center"/>
+
+        <Label/>
+
+        <Label Text="Nome do evento:" HorizontalOptions="Start"
+       TextColor="orange" FontSize="14" HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="txt_nomeEvento" Placeholder="Digite aqui:"
+               FontSize="12" PlaceholderColor="#9D9D9D" TextColor="white"
+               BackgroundColor="#262626"/>
+
+        <Frame Padding="10" BackgroundColor="#262626" Margin="10" BorderColor="black">
+            <VerticalStackLayout Spacing="10">
+
+                <Label Text="Período" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                               FontSize="Subtitle" TextColor="orange"/>
+
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto"
+                      HorizontalOptions="Center"
+                      VerticalOptions="Center">
+                
+                        <Label Grid.Row="0" Grid.Column="0"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                           Text="Início do evento:" TextColor="white"/>
+
+                        <DatePicker x:Name="dtpck_inicio" Grid.Row="0" Grid.Column="1"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                TextColor="white" Format="dd/MM/yyyy"/>
+
+                    <Label Text="Fim do evento:" Grid.Row="1" Grid.Column="0" 
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="white"/>
+
+                    <DatePicker x:Name="dtpck_fim" Grid.Row="1" Grid.Column="1"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                TextColor="white" Format="dd/MM/yyyy"/>
+                
+                </Grid>
+                                
+            </VerticalStackLayout>
+        </Frame>
+
+        <Label Text="Quantidade máxima de participantes:" HorizontalOptions="Start" 
+        TextColor="orange" FontSize="14" HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="txt_numeroParticipantes" Placeholder="Digite aqui:"
+        FontSize="12" PlaceholderColor="#9D9D9D"  TextColor="white"
+        BackgroundColor="#262626"/>
+
+        <Label Text="Local do evento:" HorizontalOptions="Start"
+        TextColor="orange" FontSize="14" HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="txt_localEvento" Placeholder="Digite aqui:"
+        FontSize="12" PlaceholderColor="#9D9D9D"  TextColor="white"
+        BackgroundColor="#262626"/>
+
+        <Label Text="Valor por participante por dia (R$):" HorizontalOptions="Start"
+        TextColor="orange" FontSize="14" HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="txt_valorParticipantePorDia" Placeholder="Digite aqui:"
+        FontSize="12" PlaceholderColor="#9D9D9D"  TextColor="white"
+        BackgroundColor="#262626"/>
+
+        <Label/>
+
+        <Button Text="Avançar" FontSize="18" FontAttributes="Bold" BackgroundColor="Orange"
+                Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

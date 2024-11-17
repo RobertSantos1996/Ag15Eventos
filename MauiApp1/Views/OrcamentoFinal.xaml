@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.OrcamentoFinal"
+             Title="OrcamentoFinal"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
+    
+    <VerticalStackLayout Margin="10" Padding="10">
+        <Label 
+            Text="Veja seu orçamento:" TextColor="Orange" FontSize="32"
+            HorizontalOptions="Center" FontAttributes="Bold"/>
+
+        <Label/>
+
+        <Frame BackgroundColor="#262626" BorderColor="orange">
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Nome do evento:" TextColor="orange" FontAttributes="Bold" FontSize="12"/>
+                <Label Text="{Binding NomeEvento}" TextColor="white" FontSize="16"/>
+                <Label Text="Local do evento:" TextColor="orange" FontAttributes="Bold" FontSize="12"/>
+                <Label Text="{Binding LocalEvento}" TextColor="white" FontSize="16"/>
+                <Label Text="Início do evento:" TextColor="orange" FontAttributes="Bold" FontSize="12"/>
+                <Label Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="white" FontSize="16"/>
+                <Label Text="Fim do evento:" TextColor="orange" FontAttributes="Bold" FontSize="12"/>
+                <Label Text="{Binding DataFim, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="white" FontSize="16"/>
+                <Label Text="Quantidade de dias:" TextColor="orange" FontAttributes="Bold" FontSize="12"/>
+                <Label Text="{Binding DuracaoEvento}" TextColor="white" FontSize="16"/>
+                <Label Text="Quantidade de participantes:" TextColor="orange" FontAttributes="Bold" FontSize="12"/>
+                <Label Text="{Binding QtdParticipantes}" TextColor="white" FontSize="16"/>
+                <Label Text="Valor por participante por dia (R$):" TextColor="orange" FontAttributes="Bold" FontSize="12"/>
+                <Label Text="{Binding ValorPorParticipante, StringFormat='{}{0:c}'}" TextColor="white" FontSize="16"/>
+
+            </VerticalStackLayout>
+            
+        </Frame>
+
+        <Label/>
+
+        <Frame BackgroundColor="#262626" BorderColor="orange">
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto">
+
+                <Label Grid.Row="0" Grid.Column="0" TextColor="orange" HorizontalTextAlignment="Center"
+                           Text="Valor total:" FontAttributes="Bold" />
+
+                <Label Grid.Row="0" Grid.Column="2" TextColor="white" HorizontalTextAlignment="Center"
+           Text="{Binding CustoEvento, StringFormat='{}{0:c}'}" FontAttributes="Bold" />
+
+            </Grid>
+            
+        </Frame>
+
+        <Label/>
+
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
+
+            <Button Text="Reprovar orçamento" BackgroundColor="red" Clicked="Button_Clicked"/>
+            <Button Text="Aprovar orçamento" BackgroundColor="#002450"/>
+
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+
+</ContentPage>
